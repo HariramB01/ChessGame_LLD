@@ -78,10 +78,10 @@ public class ChessGame {
         // Rook must also be moved during simulation to validate king safety
         if (piece instanceof King && Math.abs(from.getCol() - to.getCol()) == 2) {
 
-            int direction = (to.getCol() > from.getCol()) ? 1 : -1;
-            int rookCol = (direction == 1) ? 7 : 0;
+            int direction = (to.getCol() > from.getCol()) ? 1 : -1; // defines white or black
+            int rookCol = (direction == 1) ? 7 : 0; // 7 for white rook col, 0 for black rook col
 
-            rookFrom = board.getCell(from.getRow(), rookCol);
+            rookFrom = board.getCell(from.getRow(), rookCol); // fetch respective rook using from cell row and rookCol
 
             // Validate rook existence and type
             if (rookFrom == null || rookFrom.isEmpty()
@@ -90,7 +90,9 @@ public class ChessGame {
                 return false;
             }
 
-            rook = rookFrom.getPiece();
+            rook = rookFrom.getPiece(); // after validation assign the rook
+            // king hasn't moved yet (0,4) white king
+            // moving rook next to the king
             rookTo = board.getCell(from.getRow(), from.getCol() + direction);
 
             // Simulate rook movement

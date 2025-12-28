@@ -22,3 +22,15 @@ public class BishopMovementStrategy implements MovementStrategy{
         return true;
     }
 }
+
+/**
+ *
+ * Integer.compare(a, b) returns:
+ *
+ * 1 if a > b
+ *
+ * 0 if a == b
+ *
+ * -1 if a < b
+ *
+ */
